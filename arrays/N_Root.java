@@ -18,6 +18,7 @@ public class N_Root {
         return res;
     }
 
+    
      public static void main(String[] args){
         
         Scanner sc= new Scanner(System.in);
