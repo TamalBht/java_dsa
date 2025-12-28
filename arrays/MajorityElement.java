@@ -1,4 +1,4 @@
-
+//frequency of an elemment must be > n/3 where n is the number of elements in thhe array
 import java.util.*;
 import java.lang.*;
 import java.io.*;
