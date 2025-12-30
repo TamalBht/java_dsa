@@ -59,6 +59,30 @@ public class FourSum {
         }
         return new ArrayList<>(res);
     }
+    public List<List<Integer>>four_optimal(int[] nums,int target){
+        int n=nums.length;
+        Set<List<Integer>> res=new HashSet<>();
+        Arrays.sort(nums);
+        for(int i=0;i<n;i++){
+            if(i>0 && nums[i-1]==nums[i])continue;
+            for(int j=i+1;j<n;j++){
+                if(j>0 && nums[j-1]==nums[j]) continue;
+                int left=j+1;
+                int right=n-1;
+                while(left<right){
+                    int sum=nums[i]+nums[j]+nums[left]+nums[right];
+                    if(sum==target){
+                        List<Integer> temp=Arrays.asList(nums[i],nums[j],nums[left],nums[right]);
+                        res.add(temp);
+                        left++;right--;
+                    }
+                    if(sum<target)left++;
+                    else right--;
+                }
+            }
+        }
+        return new ArrayList<>(res);
+    }
     public static void main(String[] args) {
         int n= Integer.parseInt(args[0]);
         int[] nums=new int[n];
@@ -67,7 +91,7 @@ public class FourSum {
         }
         int target = Integer.parseInt(args[n+1]);
         FourSum obj=new FourSum();
-        List<List<Integer>>res=obj.four_better(nums, target);
+        List<List<Integer>>res=obj.four_optimal(nums, target);
         System.out.print(res);
     }
 }
