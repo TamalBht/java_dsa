@@ -20,23 +20,19 @@ public class SubXOR0 {
         return count;
     }
     public int numSubs_optimal(int[]nums,int target){
-        //here we will use the presum concept and stor it in hashmap
-        //check if a given sum exists in hashmap or not if it already exists then the middle one is zer and hence the overall summ is equal to the given target 
-        //lets say the sum is 6 and we see that 6 already exists at a given index if 6 appears again thatt means the xor of previous must be equal to 0 to give the xor sum as 6 
+       //prefix sum method
+       //refer to SubSumN for more explanation
 
-        HashMap<Integer,Integer> mpp=new HashMap<>();
+        
         int n=nums.length;
-        int xorVal=0;
-        int count=0;
+        HashMap<Integer,Integer> map=new HashMap<>();
+        map.put(0,1);
+        int xorVal=0,count=0;
         for(int i=0;i<n;i++){
             xorVal^=nums[i];
-            if(xorVal==target) count++;
-            else{
-                if(mpp.containsKey(xorVal)) count++;
-                else {
-                    mpp.put(xorVal,i);
-                }
-            }
+            int rem=xorVal^target;
+            if(map.containsKey(rem))count+=map.get(rem);
+            map.put(xorVal,map.getOrDefault(xorVal,0 )+1);
         }
         return count;
     }
