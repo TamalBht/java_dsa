@@ -2,6 +2,9 @@ import java.util.*;
 import java.lang.*;
 import java.io.*;
 
+//each index represents the pile of banana
+//we need to find the minimum speed in which the monkey can eat all the bananas in a given time
+
 public class KokoEatingBanana {
     public long calcHr(int[] piles,long speed){
         long totall=0;
