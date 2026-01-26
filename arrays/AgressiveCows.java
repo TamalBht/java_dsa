@@ -49,7 +49,7 @@ public class AgressiveCows {
         
         int n=arr.length;
         int maxx=arr[n-1]-arr[0];
-        for(int i=1;i<maxx;i++){
+        for(int i=1;i<=maxx;i++){
             if(canPlace(arr, i, cows)) res=i;
         }
         return res;
