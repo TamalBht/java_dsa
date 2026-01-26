@@ -55,11 +55,30 @@ public class AgressiveCows {
         return res;
 
     }
+    public int maxiMiniDist_opt(int[] arr,int cows){
+        Arrays.sort(arr);
+        int res=0;
+        int ans=0;
+        int n=arr.length;
+        int high=arr[n-1];
+        int low=arr[0];
+        while(low<=high){
+            int mid=(low+high)/2;
+            if(canPlace(arr, mid, cows)){
+                ans=mid;
+                low=mid+1;
+            }else{
+                high=mid-1;
+            }
+        }
+        return ans;
+
+    }
     public static void main(String[] args) {
         int[] nums={0,3,4,7,10,9};
         int cows=4;
         AgressiveCows obj=new AgressiveCows();
-        int res= obj.maxiMiniDist(nums,cows);
+        int res= obj.maxiMiniDist_opt(nums,cows);
         System.out.println(res);
     }
 }
