@@ -12,7 +12,7 @@ public class FReading {
                 ls.add((char)letters);
 
             }
-            System.out.println(String.toString(ls));
+            System.out.println();
         }catch(IOException e){
             System.out.println(e.getMessage());
         }
