@@ -12,7 +12,7 @@ public class ASCIISum {
             int asc=0;
             if(Character.isDigit(ch))asc=ch-'0';
             else asc=ch;
-            while(asc!=0){
+            while(asc!=0 ){
                 maxx=Math.max(maxx,asc%10);
                 asc=asc/10;
                 
@@ -22,7 +22,7 @@ public class ASCIISum {
         return sum;
     }
     public static void main(String[] args) {
-        String s="12ab";
+        String s="aaaaaaaaaa123";
         ASCIISum obj=new ASCIISum();
         System.out.println(obj.summ(s));
     }
