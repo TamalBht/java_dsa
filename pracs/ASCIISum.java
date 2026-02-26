@@ -22,7 +22,7 @@ public class ASCIISum {
         return sum;
     }
     public static void main(String[] args) {
-        String s="aaaaaaaaaa123";
+        String s="CD#34";
         ASCIISum obj=new ASCIISum();
         System.out.println(obj.summ(s));
     }
